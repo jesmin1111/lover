@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page with Image Switch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, rgba(255, 178, 93, 0.6), rgba(60, 180, 113, 0.7)); /* গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+      color: #239508;
+      height: 100vh; /* পুরো সাইজ */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .topnav img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 8px; /* লোগোর চারপাশে রেডিয়াস */
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      margin: 20px 10px;
+      background-color: #239508;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 30px;
+      border-radius: 20px;
+      animation: pulse 4s ease-in-out infinite;
+      transition: background-color 0.6s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3; /* হোভার ইফেক্ট */
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.97);
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* শ্যাডো */
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    h1, h3 {
+      margin-top: 20px;
+      font-family: 'Arial', sans-serif;
+      font-size: 1.5em; /* হেডিং সাইজ বাড়ানো হয়েছে */
+    }
+
+    .page {
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.9); /* হালকা পটভূমি সাদা */
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* সুন্দর শ্যাডো */
+      max-width: 100%; /* পেজ সাইজ আরও কমানো হয়েছে */
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .topnav img {
+        width: 100%; /* মোবাইলে লোগো ছোট হবে */
+      }
+
+      .btn {
+        padding: 12px 22px;
+        font-size: 14px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      h1, h3 {
+        font-size: 1.2em;
+      }
+
+      .page {
+        padding: 25px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav img {
+        width: 85%;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+
+      h1, h3 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topnav">
+    <img src="img/logo_1_.png" alt="Logo" />
+  </div>
+
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1>Welcome to My Page</h1>
+    <img src="img/pic1.gif" alt="girl" />
+    <br>
+    <button class="btn" onclick="navigateTo('page2')">CLICK HERE</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2" class="page">
+    <h1>This is Page 2</h1>
+    <img src="img/pic4.jpg" alt="girl" />
+    <br><br>
+    <a href="https://qgwnjb.ffairyluv.com/?utm_source=da57dc555e50572d&ban=snap&j5=1&j6=1&s1=171567&s2=1592642&s3=Mango2&click_id=Live" class="btn">Free Join</a>
+    <a href="https://qgwnjb.ffairyluv.com/?utm_source=da57dc555e50572d&ban=snap&j5=1&j6=1&s1=171567&s2=1592642&s3=Mango2&click_id=Live" class="btn">Paid Join</a>
+  </div>
+
+  <script>
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
